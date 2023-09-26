@@ -6,9 +6,11 @@ using namespace std;
 class Solution{
     public:
     
-    int LastIndex(string s, char p){
+    int LastIndex(string& s, char& p){
         //complete the function here
         
+        
+        //*********************
         //Iterative Method
         int ans = -1;
         for(int i=0; i<=s.size()-1; i++){
@@ -18,6 +20,18 @@ class Solution{
         }
         
         return ans;
+        
+        
+        
+        //*********************************
+        //Recursive Method
+        
+        //Base Case
+        
+        //
+        
+        
+        
     }
 };
 
