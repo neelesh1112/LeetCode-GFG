@@ -31,22 +31,32 @@ int main()
 int KthMissingElement(int a[], int n, int k)
 {
     // Complete the function
-    vector<int>ans;
-    int t=0;
-    for(int i=a[0]; i<=a[n-1]; i++)
-    {
-        if(a[t]==i)
-        {
-            t++;
-        }
-        else
-        {
-            ans.push_back(i);
-        }
-    }
-    if(ans.size()>=k)
-    {
-        return ans[k-1];
+    // vector<int>ans;
+    // int t=0;
+    // for(int i=a[0]; i<=a[n-1]; i++)
+    // {
+    //     if(a[t]==i)
+    //     {
+    //         t++;
+    //     }
+    //     else
+    //     {
+    //         ans.push_back(i);
+    //     }
+    // }
+    // if(ans.size()>=k)
+    // {
+    //     return ans[k-1];
+    // }
+    // return -1;
+    
+    
+    
+    // Optimise code
+    k = a[0] + k;
+    for(int i =1; i<n; i++){
+        if(a[i]<=k) k++;
+        else return k;
     }
     return -1;
 
