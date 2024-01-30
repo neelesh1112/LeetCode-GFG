@@ -13,24 +13,23 @@ class Solution{
      // Function to find majority element in the array
     // a: input array
     // size: size of input array
-    int majorityElement(int a[], int n)
+    int majorityElement(int a[], int size)
     {
         
         // your code here
-        if(n==1){
-            return a[0];
+        unordered_map<int,int>m;
+        for(int i=0;i<size;i++){
+            m[a[i]]++;
         }
-        map<int, int> m;
-       
-        for(long long x = 0; x < n; x++){
-           m[a[x]]++; 
-        } 
-        for(auto it : m) {
-            if(it.second > n/2){
-               return it.first;
-            } 
+            
+        for(auto it:m)
+        {
+            if(it.second>size/2){
+                  return it.first;
+                  break;
+            }
+                
         }
-         
         return -1;
     }
 };
